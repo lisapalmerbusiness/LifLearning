@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  
+  --color-cream: #FFFDF5;
+  --color-teal: #008080;
+  --color-orange: #FF4500;
+  --color-deep-teal: #004D40;
+}
+
+@layer base {
+  body {
+    @apply bg-cream text-deep-teal font-sans;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-display font-bold;
+  }
+}
+
+.adulting-gap-text {
+  background: linear-gradient(120deg, #008080 0%, #FF4500 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
