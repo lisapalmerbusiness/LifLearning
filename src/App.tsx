@@ -23,7 +23,6 @@ type View = 'home' | 'about';
 export default function App() {
   const [currentView, setCurrentView] = useState<View>('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [email, setEmail] = useState('');
 
   const toggleView = (view: View) => {
     setCurrentView(view);
@@ -135,29 +134,71 @@ export default function App() {
                       Finally.
                     </h1>
                     <p className="text-xl md:text-2xl text-teal/80 max-w-xl leading-relaxed">
-                      School taught you calculus. We teach you how to buy a house, negotiate your salary, and stop feeling like you're faking it.
+                      The financial literacy and life skills education school never gave you. We provide the blueprint for young adults and creators in Chicago and beyond who are figuring it out in real time with no one to call.
                     </p>
                     
-                    {/* Email Capture */}
-                    <div className="bg-white p-2 rounded-2xl shadow-xl shadow-teal/5 flex flex-col sm:flex-row gap-2 max-w-lg border border-teal/5">
-                      <input 
-                        type="email" 
-                        placeholder="Join the newsletter" 
-                        className="flex-1 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-teal/20"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        id="email-input"
-                      />
-                      <button 
-                        className="bg-orange text-white px-8 py-3 rounded-xl font-bold hover:bg-orange/90 transition-all flex items-center justify-center gap-2"
-                        id="submit-email"
+                    {/* Email Capture (Kit Embed) */}
+                    <div className="max-w-lg">
+                      <form 
+                        action="https://app.kit.com/forms/9379236/subscriptions" 
+                        className="seva-form formkit-form" 
+                        method="post" 
+                        data-sv-form="9379236" 
+                        data-uid="b3dbdbc392" 
+                        data-format="inline" 
+                        data-version="5" 
+                        data-options='{"settings":{"after_subscribe":{"action":"message","success_message":"Success! Now check your email to confirm your subscription.","redirect_url":""},"analytics":{"google":null,"fathom":null,"facebook":null,"segment":null,"pinterest":null,"sparkloop":null,"googletagmanager":null},"modal":{"trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"powered_by":{"show":true,"url":"https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic"},"recaptcha":{"enabled":false},"return_visitor":{"action":"show","custom_content":""},"slide_in":{"display_in":"bottom_right","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15},"sticky_bar":{"display_in":"top","trigger":"timer","scroll_percentage":null,"timer":5,"devices":"all","show_once_every":15}},"version":"5"}'
                       >
-                        Get the Checklist <ArrowRight size={18} />
-                      </button>
+                        <div data-style="clean">
+                          <ul className="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+                          <div data-element="fields" data-stacked="false" className="seva-fields formkit-fields">
+                            <div className="formkit-field">
+                              <input 
+                                className="formkit-input" 
+                                name="email_address" 
+                                aria-label="Email Address" 
+                                placeholder="Email Address" 
+                                required 
+                                type="email" 
+                                style={{ color: 'rgb(0, 0, 0)', borderColor: 'rgb(227, 227, 227)', borderRadius: '4px', fontWeight: 400 }} 
+                              />
+                            </div>
+                            <button 
+                              data-element="submit" 
+                              className="formkit-submit formkit-submit" 
+                              style={{ color: 'rgb(255, 255, 255)', backgroundColor: 'rgb(255, 69, 0)', borderRadius: '12px', fontWeight: 700, padding: '12px 24px', transition: 'all 0.3s' }}
+                            >
+                              <div className="formkit-spinner"><div></div><div></div><div></div></div>
+                              <span className="">Get The Real Adult Checklist — Free</span>
+                            </button>
+                          </div>
+                          <div className="formkit-powered-by-convertkit-container">
+                            <a href="https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic" data-element="powered-by" className="formkit-powered-by-convertkit opacity-50 text-xs" data-variant="dark" target="_blank" rel="nofollow noopener">Built with Kit</a>
+                          </div>
+                        </div>
+                        <style dangerouslySetInnerHTML={{ __html: `
+                          .formkit-form[data-uid="b3dbdbc392"] *{box-sizing:border-box;}
+                          .formkit-form[data-uid="b3dbdbc392"] .formkit-input{width:100%; display: block; margin-bottom: 10px; border-radius: 12px; padding: 12px 16px; border: 1px solid #00808020; font-size: 16px;}
+                          .formkit-form[data-uid="b3dbdbc392"] .formkit-submit{width:100%; display: block; border: none; cursor: pointer; position: relative;}
+                          .formkit-form[data-uid="b3dbdbc392"] .formkit-submit:hover{background-color: #e63e00 !important;}
+                          .formkit-form[data-uid="b3dbdbc392"] .formkit-alert{padding: 10px; border-radius: 8px; margin-bottom: 15px; font-size: 14px; text-align: center;}
+                          .formkit-form[data-uid="b3dbdbc392"] .formkit-alert-success{background: #d3fbeb; color: #0c905c; border: 1px solid #10bf7a;}
+                          .formkit-form[data-uid="b3dbdbc392"] .formkit-alert-error{background: #fde8e2; color: #ea4110; border: 1px solid #f2643b;}
+                          @media (min-width: 640px) {
+                            .formkit-form[data-uid="b3dbdbc392"] .formkit-fields { display: flex; gap: 10px; align-items: flex-start; }
+                            .formkit-form[data-uid="b3dbdbc392"] .formkit-field { flex: 1; }
+                            .formkit-form[data-uid="b3dbdbc392"] .formkit-submit { width: auto; margin-bottom: 0; }
+                            .formkit-form[data-uid="b3dbdbc392"] .formkit-input { margin-bottom: 0; }
+                          }
+                          /* Spinner Styles */
+                          .formkit-spinner{display:none; height:0; width:0; margin:0 auto; position:absolute; top:0; left:0; right:0; overflow:hidden; text-align:center; transition:all 300ms ease-in-out;}
+                          .formkit-spinner > div{margin:auto; width:12px; height:12px; background-color:#fff; opacity:0.3; border-radius:100%; display:inline-block; animation:formkit-bouncedelay 1.4s infinite ease-in-out both;}
+                          .formkit-submit[data-active] .formkit-spinner{display:flex; opacity:1; height:100%; width:100%; background: inherit; border-radius: inherit;}
+                          .formkit-submit[data-active] span{opacity:0;}
+                          @keyframes formkit-bouncedelay{0%,80%,100%{transform:scale(0);} 40%{transform:scale(1);}}
+                        ` }} />
+                      </form>
                     </div>
-                    <p className="text-sm text-teal/60 pl-2 flex items-center gap-2">
-                       <CheckCircle2 size={16} /> Get the "Real Adult Checklist" immediately.
-                    </p>
                   </div>
                   
                   {/* Visual Element */}
@@ -178,7 +219,7 @@ export default function App() {
                             <Heart className="text-cream w-20 h-20 opacity-20" />
                         </div>
                         <div className="aspect-square bg-teal/20 rounded-3xl overflow-hidden shadow-xl border-2 border-teal/10 flex items-center justify-center backdrop-blur-xl">
-                           <span className="text-teal font-display font-bold text-4xl">Gap.</span>
+                           <span className="text-teal font-display font-bold text-4xl">Focus.</span>
                         </div>
                       </div>
                     </div>
@@ -186,47 +227,65 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Life Pillars Grid */}
+              {/* What is LifLearning Section */}
+              <div className="bg-teal/5 py-24 px-6">
+                <div className="max-w-4xl mx-auto text-center space-y-8">
+                  <h2 className="text-4xl md:text-5xl text-deep-teal">School taught you a lot. Just not the right stuff.</h2>
+                  <p className="text-xl md:text-2xl text-teal/70 leading-relaxed">
+                    We cover the essential adulting toolkit school skipped. Plain language. Real situations. No fluff. From high-yield savings to workplace etiquette, we provide life skills for every age and every stage.
+                  </p>
+                </div>
+              </div>
+
+              {/* What You'll Get Section */}
               <div className="bg-white py-24 px-6 border-y border-teal/5">
                 <div className="max-w-7xl mx-auto">
                   <div className="text-center mb-16 space-y-4">
-                    <h2 className="text-4xl md:text-5xl text-deep-teal">The Three Pillars</h2>
-                    <p className="text-lg text-teal/60 max-w-2xl mx-auto">
-                      Everything you need to master your 20s and 30s, broken down into actionable playbooks.
-                    </p>
+                    <h2 className="text-4xl md:text-5xl text-deep-teal">The Real Adulting 101 Checklist — Yours Free.</h2>
                   </div>
                   
-                  <div className="grid md:grid-cols-3 gap-8" id="pillars-grid">
-                    {/* Pillar: Finance */}
-                    <div className="group p-10 bg-cream rounded-[40px] border border-teal/5 hover:border-teal/20 transition-all hover:bg-white hover:shadow-2xl hover:shadow-teal/5">
-                      <div className="w-16 h-16 bg-teal/10 rounded-2xl flex items-center justify-center text-teal mb-8 group-hover:scale-110 transition-transform">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8" id="pillars-grid">
+                    {/* Financial Literacy */}
+                    <div className="group p-8 bg-cream rounded-[40px] border border-teal/5 hover:border-teal/20 transition-all hover:bg-white hover:shadow-2xl hover:shadow-teal/5">
+                      <div className="w-16 h-16 bg-teal/10 rounded-2xl flex items-center justify-center text-teal mb-6 group-hover:scale-110 transition-transform">
                         <Wallet size={32} />
                       </div>
-                      <h3 className="text-2xl mb-4">Finance</h3>
-                      <p className="text-teal/70 leading-relaxed">
-                        Budgeting for people who hate spreadsheets. High-yield savings, index funds, and credit score hacks that actually work.
+                      <h3 className="text-xl mb-3">Financial Literacy</h3>
+                      <p className="text-teal/70 leading-relaxed text-base">
+                        Money habits that actually stick.
                       </p>
                     </div>
 
-                    {/* Pillar: Career */}
-                    <div className="group p-10 bg-cream rounded-[40px] border border-teal/5 hover:border-teal/20 transition-all hover:bg-white hover:shadow-2xl hover:shadow-teal/5">
-                      <div className="w-16 h-16 bg-orange/10 rounded-2xl flex items-center justify-center text-orange mb-8 group-hover:scale-110 transition-transform">
+                    {/* Legal & Contracts */}
+                    <div className="group p-8 bg-cream rounded-[40px] border border-teal/5 hover:border-teal/20 transition-all hover:bg-white hover:shadow-2xl hover:shadow-teal/5">
+                      <div className="w-16 h-16 bg-orange/10 rounded-2xl flex items-center justify-center text-orange mb-6 group-hover:scale-110 transition-transform">
                         <Briefcase size={32} />
                       </div>
-                      <h3 className="text-2xl mb-4">Career</h3>
-                      <p className="text-teal/70 leading-relaxed">
-                        The art of the interview. How to ghost-write your own promotion and navigate office politics without losing your soul.
+                      <h3 className="text-xl mb-3">Legal & Contracts</h3>
+                      <p className="text-teal/70 leading-relaxed text-base">
+                        What to check before you sign anything.
                       </p>
                     </div>
 
-                    {/* Pillar: Lifestyle */}
-                    <div className="group p-10 bg-cream rounded-[40px] border border-teal/5 hover:border-teal/20 transition-all hover:bg-white hover:shadow-2xl hover:shadow-teal/5">
-                      <div className="w-16 h-16 bg-deep-teal/10 rounded-2xl flex items-center justify-center text-deep-teal mb-8 group-hover:scale-110 transition-transform">
+                    {/* Career Strategy */}
+                    <div className="group p-8 bg-cream rounded-[40px] border border-teal/5 hover:border-teal/20 transition-all hover:bg-white hover:shadow-2xl hover:shadow-teal/5">
+                      <div className="w-16 h-16 bg-deep-teal/10 rounded-2xl flex items-center justify-center text-deep-teal mb-6 group-hover:scale-110 transition-transform">
                         <Heart size={32} />
                       </div>
-                      <h3 className="text-2xl mb-4">Lifestyle</h3>
-                      <p className="text-teal/70 leading-relaxed">
-                        Healthy habits for busy people. Finding a therapist, decorating your first real apartment, and building adult friendships.
+                      <h3 className="text-xl mb-3">Career Strategy</h3>
+                      <p className="text-teal/70 leading-relaxed text-base">
+                        The workplace skills nobody teaches before day one.
+                      </p>
+                    </div>
+
+                    {/* Financial Confidence */}
+                    <div className="group p-8 bg-cream rounded-[40px] border border-teal/5 hover:border-teal/20 transition-all hover:bg-white hover:shadow-2xl hover:shadow-teal/5">
+                      <div className="w-16 h-16 bg-teal/10 rounded-2xl flex items-center justify-center text-teal mb-6 group-hover:scale-110 transition-transform">
+                        <CheckCircle2 size={32} />
+                      </div>
+                      <h3 className="text-xl mb-3">Financial Confidence</h3>
+                      <p className="text-teal/70 leading-relaxed text-base">
+                        The one move that reduces stress fastest.
                       </p>
                     </div>
                   </div>
@@ -251,47 +310,44 @@ export default function App() {
                       animate={{ opacity: 1, y: 0 }}
                       className="inline-block bg-teal/10 text-teal px-4 py-1.5 rounded-full text-sm font-semibold tracking-wide"
                     >
-                      THE STORY
+                      THE FOUNDER
                     </motion.div>
                     <h2 className="text-5xl md:text-6xl text-deep-teal leading-tight" id="about-title">
-                      Bridging the <br />
-                      <span className="adulting-gap-text">Adulting Gap.</span>
+                      Bridging the adulting gap — <br />
+                      <span className="adulting-gap-text">because it matters.</span>
                     </h2>
                   </div>
 
                   <div className="prose prose-xl prose-teal text-teal/80 space-y-8 leading-relaxed">
-                    <p className="text-2xl font-medium text-deep-teal italic">
-                      "I spent my 22nd birthday in Chicago with exactly $4.50 in my bank account and a stack of bills I didn't understand."
-                    </p>
-                    
                     <p>
-                      Growing up in Chicago taught me grit, but it didn't teach me how a 401(k) works. After college, I hit what I call the **Adulting Gap**—that terrifying space between graduation and actually knowing what you're doing.
+                      I didn’t want just any business. I wanted one that mattered. For years I told people I’d be a business owner someday. I saw a gap in the way we teach young people how to survive and thrive. That’s why LifLearning (Life In Focus Learning) exists.
                     </p>
                     
                     <div className="bg-orange/5 border-l-4 border-orange p-8 rounded-r-3xl my-12">
-                      <p className="text-orange font-bold text-3xl mb-4">$600 per two weeks.</p>
+                      <p className="text-orange font-bold text-2xl mb-4">The Activation</p>
                       <p className="text-deep-teal/80 m-0">
-                        That was my survival budget. I was juggling a entry-level job and trying to figure out why insurance deductibles felt like a scam. I realized my friends were all faking it too. No one had actually taught us how to be adults.
+                        In 2020 I had $600 every two weeks for months. I have nothing to show for it. No savings. No investment. I wasn't bad with money; I just never had a foundation. As a Chicago-based entrepreneur, I realized that the first step in financial literacy isn’t a budget—it’s a goal.
                       </p>
                     </div>
 
                     <p>
-                      LifLearning was born out of that struggle. It’s the "cool older friend" advice I wish I had. The one who tells you which bank account to open, how to stand up for yourself in a performance review, and how to cook something other than frozen pizza.
+                      This is what I built instead.
                     </p>
 
-                    <h3 className="text-3xl text-deep-teal font-display mt-16 mb-6">Our Mission</h3>
-                    <p>
-                      Our mission is simple: To provide the practical education the system forgot. We’re here to help you move from surviving to thriving, one life pillar at a time.
-                    </p>
+                    <div className="bg-teal/5 p-8 rounded-3xl border border-teal/10">
+                      <h3 className="text-3xl text-deep-teal font-display mb-4">Founder Note</h3>
+                      <p className="m-0">
+                        LifLearning connects financial literacy and life skills—because they’ve always been connected. I’m Shalisa, and I’ve lived the gap. I built the resource I wish existed for the next generation of leaders and creators.
+                      </p>
+                    </div>
                   </div>
                   
                   <div className="pt-12 border-t border-teal/10 flex flex-col md:flex-row items-center gap-8">
                      <div className="w-24 h-24 bg-teal rounded-full overflow-hidden flex-shrink-0 grayscale">
-                        {/* Avatar placeholder */}
-                        <div className="w-full h-full bg-gradient-to-br from-teal to-deep-teal flex items-center justify-center text-cream font-bold text-xl">LL</div>
+                        <div className="w-full h-full bg-gradient-to-br from-teal to-orange flex items-center justify-center text-cream font-bold text-xl">S</div>
                      </div>
                      <div>
-                        <p className="text-xl font-bold text-deep-teal mb-1">Jordan Wells</p>
+                        <p className="text-xl font-bold text-deep-teal mb-1">Shalisa Life</p>
                         <p className="text-teal/60">Founder, LifLearning</p>
                      </div>
                   </div>
